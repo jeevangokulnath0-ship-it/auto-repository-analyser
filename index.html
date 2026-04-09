@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDoc AI – AI Code Documentation Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AutoDoc AI</h1>
+            <p>Generate professional technical documentation in seconds using AI.</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <div class="input-group">
+                    <label for="repo-url">GitHub Repository URL</label>
+                    <input type="text" id="repo-url" placeholder="https://github.com/username/repository">
+                </div>
+
+                <div class="input-group">
+                    <label for="code-snippet">Or Paste Code Snippet</label>
+                    <textarea id="code-snippet" placeholder="Paste your code here..."></textarea>
+                </div>
+
+                <button id="generate-btn" class="btn">
+                    <span class="loader" id="loader"></span>
+                    <span id="btn-text">Generate Documentation</span>
+                </button>
+
+                <div id="error-box" class="error-message"></div>
+            </div>
+
+            <div id="results" class="results-section">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.5rem; color: var(--text-main);">Generated Documentation</h2>
+                        <button id="copy-btn" class="btn" style="width: auto; padding: 0.5rem 1rem; font-size: 0.875rem;">
+                            Copy All
+                        </button>
+                    </div>
+
+                    <div class="result-block">
+                        <h3>Project Overview</h3>
+                        <div id="project-description" class="content-box"></div>
+                    </div>
+
+                    <div class="result-block">
+                        <h3>Functions & Classes</h3>
+                        <div id="functions-list" class="content-box"></div>
+                    </div>
+
+                    <div id="api-section" class="result-block">
+                        <h3>API Endpoints</h3>
+                        <div id="api-endpoints" class="content-box"></div>
+                    </div>
+
+                    <div class="result-block">
+                        <h3>Example Usage</h3>
+                        <div id="usage-content" class="content-box"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
